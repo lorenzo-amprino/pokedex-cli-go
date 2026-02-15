@@ -1,19 +1,11 @@
 package main
 
-type commandsConfig struct {
-	locationArea paginationConfig
-}
+import (
+	"pokedexcli/internal/pokeapi"
+)
 
-type paginationConfig struct {
-	next     string
-	previous string
-}
-
-func newCommandsConfig() *commandsConfig {
-	return &commandsConfig{
-		locationArea: paginationConfig{
-			next:     "",
-			previous: "",
-		},
-	}
+type config struct {
+	pokeapiClient    pokeapi.Client
+	nextLocationsURL *string
+	prevLocationsURL *string
 }
