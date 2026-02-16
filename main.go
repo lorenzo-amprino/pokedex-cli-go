@@ -8,6 +8,7 @@ import (
 func main() {
 	commandsConfig := &config{
 		pokeapiClient: pokeapi.NewClient(5 * time.Second),
+		pokedex:       make(map[string]pokeapi.Pokemon),
 	}
 
 	startRepl(commandsConfig)
